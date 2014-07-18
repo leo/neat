@@ -1,0 +1,11 @@
+dl dd {
+	display: none;
+}
+
+.tabs-1 section article {
+	display: none;
+}
+
+.tabs-1 section article.active {
+	display: block;
+}
