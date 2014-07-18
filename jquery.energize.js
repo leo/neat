@@ -1,30 +1,31 @@
 /*!
 	Energize 0.0.1
+	Copyright 2014 - medienreaktor GmbH
 */
 
 (function ($) {
 
-    $.fn.accordion = function(speed) {
+	$.fn.accordion = function(speed) {
 
 		$(this).find('dt').click(function(){
 				
 			var open_items = $(this).next().hasClass('open');
 			var next = $(this).next();
 			var opened = $(this).closest('dl').find('.open');
-				
+					
 			if(open_items != true){
 				$(opened).slideUp();
 				$(opened).removeAttr('class');
 			}
-				
+					
 			$(next).slideToggle(speed);
 			$(next).toggleClass('open');
 				
 		});
 		
-   }
+	}
    
-   $.fn.tabs = function() {
+	$.fn.tabs = function() {
 
 		$(this).find('nav ul li a').click(function(event){
 			
@@ -45,7 +46,6 @@
 			
 			event.preventDefault();
 		});
-	
 	}
 
 }(jQuery));
