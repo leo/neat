@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title>Energize Preview</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/core.css" type="text/css" />
+	</head>
+	
+	<body>
+		
+		
+		<dl class="accordion-1">
+
+			<dt>Dies ist eine Überschrift</dt>
+			<dd>Diest ist der Inhalt</dd>
+
+			<dt>Dies ist eine Überschrift</dt>
+			<dd>Diest ist der Inhalt</dd>
+			
+			<dt>Dies ist eine Überschrift</dt>
+			<dd>Diest ist der Inhalt</dd>
+
+		</dl>
+		
+		<dl class="accordion-2">
+
+			<dt>Dies ist eine Überschrift</dt>
+			<dd>Diest ist der Inhalt</dd>
+
+			<dt>Dies ist eine Überschrift</dt>
+			<dd>Diest ist der Inhalt</dd>
+			
+			<dt>Dies ist eine Überschrift</dt>
+			<dd>Diest ist der Inhalt</dd>
+
+		</dl>
+		
+		
+		<div class="tabs-1">
+			<nav>
+				<ul>
+					<li class="active"><a href="#tab-1-1">Bereich 1</a></li>
+					<li><a href="#tab-1-2">Bereich 2</a></li>
+					<li><a href="#tab-1-3">Bereich 3</a></li>
+				</ul>
+			</nav>
+			<section>
+				<article id="tab-1-1" class="active">Inhalt von Bereich 1</article>
+				<article id="tab-1-2">Inhalt von Bereich 2</article>
+				<article id="tab-1-3">Inhalt von Bereich 3</article>
+			</section>
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="js/jquery.energize.js"></script>
+		
+		<script>
+			$(function(){
+			    $('.accordion-1').accordion(200);
+				$('.tabs-1').tabs();
+			});
+		</script>
+	</body>
+
+</html>
