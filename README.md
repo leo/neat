@@ -1,4 +1,4 @@
-energize.jquery
+neat
 ===============
 
-A lightweight ui-handler for accordions, tabs, etc.
+A lightweight jquery ui-handler for accordions, tabs, etc.
