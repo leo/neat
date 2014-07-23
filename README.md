@@ -13,6 +13,6 @@ Anschließend sollte dann sowohl das Plugin geladen, als auch direkt initiiert w
 			$('.accordion').accordion(200);
 			$('.tabs').tabs();
 			$('.element').center();
-			$('a[tooltip]').tooltip();
+			$('a[title]').tooltip();
 		});
 	</script>
