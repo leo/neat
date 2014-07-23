@@ -47,5 +47,22 @@
 			event.preventDefault();
 		});
 	}
+	
+	$.fn.center = function() {
+		
+		$(document).ready(function(){
+    			center_me();
+    			$(window).on('resize', center_me);
+		});
+  
+		function center_me(){
+    			$(this).css({
+        			position: 'absolute',
+        			left: ($(window).width() / 2) - $(this).outerWidth(true) / 2,
+        			top: ($(window).height() / 2) - $(this).outerHeight(true) / 2
+    			});
+ 		}
+
+	}
 
 }(jQuery));
