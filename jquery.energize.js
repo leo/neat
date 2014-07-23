@@ -18,7 +18,7 @@
 			if(open_items != true){
 				$(opened).slideUp();
 				$(opened).removeAttr('class');
-			}
+			};
 					
 			$(next).slideToggle(speed);
 			$(next).toggleClass('open');
@@ -46,7 +46,7 @@
 				
 				$(tabs).find('#' + id).show();
 				$(tabs).find('#' + id).addClass('active');
-			}
+			};
 			
 			event.preventDefault();
 		});
@@ -58,17 +58,17 @@
         
 		var config = {
 			'container': null
-		}
+		};
 		
 		if (options) {
 			$.extend(config, options);
-		}
+		};
 		
 		if (config.container !== null) {
 			var wrap = config.container;
 		} else {
 			var wrap = $(window);
-		}
+		};
           
         	$( window ).resize(function() {
     			element.css({
@@ -80,6 +80,38 @@
         
         	return this;
         	
+	}
+	
+	$.fn.tooltip = function(speed) {
+		
+		if(! speed) {
+			var speed = 300;	
+		};
+    
+		$(this).hover(function(){ 
+			
+			var tooltip_content = $(this).attr('title');
+			var position = $(this).position();
+        
+			$(this).data('tooltip', tooltip_content).removeAttr('title');
+			
+			var styling =	'display: none; ' +
+					'position: absolute; ' +
+					'left: ' + position.left + 'px; ' +
+					'top: ' + (position.top + $(this).outerHeight(true)) + 'px;';
+		
+			$('body').append('<div role="tooltip" style="' + styling + '">' + tooltip_content + '</div>');
+			$('div[role="tooltip"]').fadeIn(speed);
+			
+		}, function(){
+         
+			$(this).attr('title', $(this).data('tooltip'));
+			$('div[role="tooltip"]').fadeOut(speed, function(){
+				$(this).remove();
+			});
+			
+		});
+		
 	}
 
 }(jQuery));
