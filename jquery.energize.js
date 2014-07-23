@@ -49,7 +49,9 @@
 	}
 	
 	$.fn.center = function(options) {
-		
+        
+        	element = $(this);
+        
 		var config = {
 			'container': null
 		}
@@ -63,15 +65,17 @@
 		} else {
 			var wrap = $(window);
 		}
-  
-    		$(this).css({
-        		position: 'absolute',
-        		left: (wrap.width() / 2) - $(this).outerWidth(true) / 2,
-        		top: (wrap.height() / 2) - $(this).outerHeight(true) / 2
-    		});
-    		
-    		return this;
-
+          
+        	$( window ).resize(function() {
+    			element.css({
+        			position: 'absolute',
+        			left: (wrap.width() / 2) - element.outerWidth(true) / 2,
+        			top: (wrap.height() / 2) - element.outerHeight(true) / 2
+    			});
+		}).trigger('resize');
+        
+        	return this;
+        	
 	}
 
 }(jQuery));
