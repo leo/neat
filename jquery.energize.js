@@ -48,12 +48,26 @@
 		});
 	}
 	
-	$.fn.center = function() {
+	$.fn.center = function(options) {
+		
+		var config = {
+			'container': null
+		}
+		
+		if (options) {
+			$.extend(config, options);
+		}
+		
+		if (config.container !== null) {
+			var wrap = config.container;
+		} else {
+			var wrap = $(window);
+		}
   
     		$(this).css({
         		position: 'absolute',
-        		left: ($(window).width() / 2) - $(this).outerWidth(true) / 2,
-        		top: ($(window).height() / 2) - $(this).outerHeight(true) / 2
+        		left: (wrap.width() / 2) - $(this).outerWidth(true) / 2,
+        		top: (wrap.height() / 2) - $(this).outerHeight(true) / 2
     		});
     		
     		return this;
