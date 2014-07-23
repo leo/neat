@@ -1,5 +1,5 @@
 /*!
-	Energize 0.0.1
+	neat 0.0.4 - a lightweight ui-handler for jquery
 	Copyright 2014 - medienreaktor GmbH
 */
 
