@@ -6,6 +6,8 @@
 (function ($) {
 
 	$.fn.accordion = function(speed) {
+		
+		$(this).find('dd').css('display', 'none');
 
 		$(this).find('dt').click(function(){
 				
@@ -26,6 +28,8 @@
 	}
    
 	$.fn.tabs = function() {
+		
+		$(this).find('section article').not('.active').css('display', 'none');
 
 		$(this).find('nav ul li a').click(function(event){
 			
