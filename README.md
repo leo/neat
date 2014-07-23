@@ -6,7 +6,7 @@ Selbstverständlich sollte zunächst **jQuery** auf der jeweiligen Seite eingebu
 
 Anschließend sollte dann sowohl das Plugin geladen, als auch direkt initiiert werden. Das sieht dann so aus:
 
-	<script src="js/jquery.energize.js"></script>
+	<script src="js/jquery.neat.min.js"></script>
 		
 	<script>
 		$(function(){
