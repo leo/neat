@@ -66,11 +66,12 @@
 		
 		if (config.container !== null) {
 			var wrap = config.container;
+			container.css('position', 'relative');
 		} else {
 			var wrap = $(window);
 		};
           
-        	$( window ).resize(function() {
+        	$(window).resize(function() {
     			element.css({
         			position: 'absolute',
         			left: (wrap.width() / 2) - element.outerWidth(true) / 2,
