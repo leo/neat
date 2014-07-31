@@ -1,5 +1,5 @@
 /*!
-	neat 0.0.4 - a lightweight ui-handler for jquery
+	neat 0.0.5 - a lightweight ui-handler for jquery
 	Copyright 2014 - medienreaktor GmbH
 */
 
@@ -22,6 +22,7 @@
 					
 			$(next).slideToggle(speed);
 			$(next).toggleClass('open');
+			$(this).toggleClass('active');
 				
 		});
 		
