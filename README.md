@@ -16,3 +16,15 @@ Anschließend sollte dann sowohl das Plugin geladen, als auch direkt initiiert w
 			$('a[title]').tooltip();
 		});
 	</script>
+
+## Verzögerungen deaktivieren
+
+Auf einigen mobilen Browsern werden Verzögerungen bei den Klick-Events auftreten, welche sich ganz einfach beheben lassen. Hierzu muss das jQuery-Plugin 'fastclick' eingebunden werden:
+
+https://github.com/ftlabs/fastclick/blob/master/lib/fastclick.js
+
+Ist das Plugin eingebunden, muss es nurnoch wie folgt initiiert werden:
+
+	$(function() {
+    		FastClick.attach(document.body);
+	});
