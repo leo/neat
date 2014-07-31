@@ -30,6 +30,7 @@
 			if(open_items != true){
 				$(opened).slideUp();
 				$(opened).removeAttr('class');
+				$(this).closest('dl').find('.active').removeClass('active');
 			};
 					
 			$(next).slideToggle(speed);
