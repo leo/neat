@@ -4,6 +4,18 @@
 */
 
 (function ($) {
+	
+	$.fn.toggleAttr = function(attr, attr_con) {
+		
+		var el = $(this);
+		
+		if(el.attr(attr)) {
+			el.removeAttr(attr);
+		} else {
+			el.attr(attr, attr_con);
+		}
+		
+	}
 
 	$.fn.accordion = function(speed) {
 		
