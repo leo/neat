@@ -23,7 +23,7 @@ As a developer you be an opponent of long loading times. In order to save as muc
 
 ### delays on mobile devices
 
-Many mobile browsers are adding a 300ms-delay to each click-event because they need to check if you use the double-tab method first. Of course, this is pretty ugly. To get around this you just need to implement the js-library [fastclick](https://github.com/ftlabs/fastclick/blob/master/lib/fastclick.js):
+Many mobile browsers are adding a 300ms-delay to each click-event because they need to check if you use the double-tab method first. Of course, this is pretty ugly. To get around this you just need to implement  [fastclick](https://github.com/ftlabs/fastclick/blob/master/lib/fastclick.js):
 
 	$(function() {
     		FastClick.attach(document.body);
