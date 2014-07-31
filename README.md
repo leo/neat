@@ -16,6 +16,10 @@ Anschließend sollte dann sowohl das Plugin geladen, als auch direkt initiiert w
 			$('a[title]').tooltip();
 		});
 	</script>
+	
+### minified
+
+Das minimierte Plugin kann <a href="http://marijnhaverbeke.nl//uglifyjs?code_url=https://raw.githubusercontent.com/medienreaktor/neat/master/jquery.neat.js&header=/*!%20neat%20-%20a%20lightweight%20ui-handler%20for%20jquery%20-%20Copyright%202014%20medienreaktor%20GmbH%20*/">hier</a> heruntergeladen werden.
 
 ## Verzögerungen deaktivieren
 
