@@ -1,5 +1,5 @@
 /*!
-	neat 0.0.5 - a lightweight ui-handler for jquery
+	neat 0.0.6 - a lightweight ui-handler for jquery
 	Copyright 2014 - medienreaktor GmbH
 */
 
