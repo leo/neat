@@ -17,27 +17,56 @@
 		
 	}
 
-	$.fn.accordion = function(speed) {
+	$.fn.accordion = function(speed, all) { 
 		
-		$(this).find('dd').css('display', 'none');
+        	if(!all) {
+            
+            		$(this).find('dd').css('display', 'none');
 
-		$(this).find('dt').click(function(){
-				
-			var open_items = $(this).next().hasClass('open');
-			var next = $(this).next();
-			var opened = $(this).closest('dl').find('.open');
-					
-			if(open_items != true){
-				$(opened).slideUp();
-				$(opened).removeAttr('class');
-				$(this).closest('dl').find('.active').removeClass('active');
-			};
-					
-			$(next).slideToggle(speed);
-			$(next).toggleClass('open');
-			$(this).toggleClass('active');
-				
-		});
+            		$(this).find('dt').click(function(){
+                    
+                		var open_items = $(this).next().hasClass('open');
+                		var next = $(this).next();
+                		var opened = $(this).closest('dl').find('.open');
+                        
+                		if(open_items != true){
+                    			$(opened).slideUp(speed);
+                    			$(opened).removeAttr('class');
+                    			$(this).closest('dl').find('.active').removeClass('active');
+                		};
+                        
+                		$(next).slideToggle(speed);
+                		$(next).toggleClass('open');
+                		$(this).toggleClass('active');
+                    
+        		});
+            
+        	} else {
+        
+            		if(all == 'open' && $(this).hasClass('all-open') == false) {
+                		$(this).find('dd').not(".open").slideDown(speed).addClass('open');
+                		$(this).find('dt').not(".active").addClass('active');
+                        
+                		$(this).removeClass('all-closed');
+                		$(this).addClass('all-open');
+            		}
+            
+            		if(all == 'close' && $(this).hasClass('all-closed') == false) {
+                		$(this).find('.open').slideUp(speed).removeClass('open');                 
+                		$(this).find('.active').removeClass('active');
+                        
+                		$(this).removeClass('all-open');
+                		$(this).addClass('all-closed');
+            		}
+            
+            		if(all == 'toggle') {
+                		$(this).find('dd').slideToggle(speed).toggleClass('open');
+                		$(this).find('dt').toggleClass('active');
+                        
+                		$(this).removeClass('all-open all-closed');
+            		}
+            
+        	}
 		
 	}
    
