@@ -1,4 +1,8 @@
-## usage
+## what?
+
+We all know jQuery UI but no one likes it. Why? It's completely overloaded and absolutely not dynamic. At this point, "neat" comes in.
+
+## how?
 
 Of course you need no include **jQuery** in your site, before you can use neat.
 
