@@ -10,10 +10,7 @@ Afterwards our plugin needs to be loaded and initiated through some pretty neat 
 		
 	<script>
 		$(function(){
-			$('.accordion').accordion();
-			$('.tabs').tabs();
-			$('.element').center();
-			$('a[title]').tooltip();
+			$('.element').method();
 		});
 	</script>
 	
