@@ -1,5 +1,5 @@
 /*!
-	neat 0.0.7 - a lightweight ui-handler for jquery
+	neat 0.0.8 - a lightweight ui-handler for jquery
 	Copyright 2014 - medienreaktor GmbH
 */
 
@@ -17,63 +17,68 @@
 		
 	}
 
-	$.fn.accordion = function(speed, all) { 
+	$.fn.accordion = function(raw_speed, all) {
 		
-        	if(!all) {
-            
-            		$(this).find('dd').css('display', 'none');
-
-            		$(this).find('dt').click(function(){
+		var root = $(this);
+		var speed = raw_speed;
+		
+		$(this).find('dd').css('display', 'none');
+		
+		$(this).find('dt').click(function(){
                     
-                		var open_items = $(this).next().hasClass('open');
-                		var next = $(this).next();
-                		var opened = $(this).closest('dl').find('.open');
+			var open_items = $(this).next().hasClass('open');
+			var next = $(this).next();
+			var opened = $(this).closest('dl').find('.open');
                         
-                		if(open_items != true){
-                    			$(opened).slideUp(speed);
-                    			$(opened).removeAttr('class');
-                    			$(this).closest('dl').find('.active').removeClass('active');
-                		};
+			if(open_items != true){
+				opened.slideUp(speed);
+				opened.removeAttr('class');
+				$(this).closest('dl').find('.active').removeClass('active');
+			};
                         
-                		$(next).slideToggle(speed);
-                		$(next).toggleClass('open');
-                		$(this).toggleClass('active');
+			next.slideToggle(speed);
+			next.toggleClass('open');
+			$(this).toggleClass('active');
                     
-        		});
+		});
             
-        	} else {
-        
-            		if(all == 'open' && $(this).hasClass('all-open') == false) {
-                		$(this).find('dd').not(".open").slideDown(speed).addClass('open');
-                		$(this).find('dt').not(".active").addClass('active');
-                        
-                		$(this).removeClass('all-closed');
-                		$(this).addClass('all-open');
-            		}
-            
-            		if(all == 'close' && $(this).hasClass('all-closed') == false) {
-                		$(this).find('.open').slideUp(speed).removeClass('open');                 
-                		$(this).find('.active').removeClass('active');
-                        
-                		$(this).removeClass('all-open');
-                		$(this).addClass('all-closed');
-            		}
-            
-            		if(all == 'toggle') {
-                		$(this).find('dd').slideToggle(speed).toggleClass('open');
-                		$(this).find('dt').toggleClass('active');
-                        
-                		$(this).removeClass('all-open all-closed');
-            		}
-            
-        	}
+		return {
+			
+			multi: function(sort) {
+				
+				if(sort == 'open' && root.hasClass('all-open') == false) {
+					root.find('dd').not(".open").slideDown(speed).addClass('open');
+					root.find('dt').not(".active").addClass('active');
+					
+					root.removeClass('all-closed');
+					root.addClass('all-open');
+				}
+					
+				if(sort == 'close' && root.hasClass('all-closed') == false) {
+					root.find('.open').slideUp(speed).removeClass('open');                 
+					root.find('.active').removeClass('active');
+					
+					root.removeClass('all-open');
+					root.addClass('all-closed');
+				}
+				
+				if(sort == 'toggle') {
+					root.find('dd').slideToggle(speed).toggleClass('open');
+					root.find('dt').toggleClass('active');
+					
+					root.removeClass('all-open all-closed');
+				}
+				
+			}
+			
+		}
 		
 	}
    
 	$.fn.tabs = function() {
 		
 		$(this).find('section article').not('.active').css('display', 'none');
-
+		
 		$(this).find('nav ul li a').click(function(event){
 			
 			var curr = $(this).closest('li').hasClass('active');
@@ -93,37 +98,38 @@
 			
 			event.preventDefault();
 		});
+		
 	}
 	
 	$.fn.center = function(options) {
-        
-        	element = $(this);
-        
+			
+		element = $(this);
+			
 		var config = {
 			'container': null
 		};
-		
+			
 		if (options) {
 			$.extend(config, options);
 		};
-		
+			
 		if (config.container !== null) {
 			var wrap = config.container;
 			container.css('position', 'relative');
 		} else {
 			var wrap = $(window);
 		};
-          
-        	$(window).resize(function() {
-    			element.css({
-        			position: 'absolute',
-        			left: (wrap.width() / 2) - element.outerWidth(true) / 2,
-        			top: (wrap.height() / 2) - element.outerHeight(true) / 2
-    			});
+			
+		$(window).resize(function() {
+			element.css({
+				position: 'absolute',
+				left: (wrap.width() / 2) - element.outerWidth(true) / 2,
+				top: (wrap.height() / 2) - element.outerHeight(true) / 2
+			});
 		}).trigger('resize');
-        
-        	return this;
-        	
+		
+		return this;
+		
 	}
 	
 	$.fn.tooltip = function(speed) {
@@ -136,19 +142,19 @@
 			
 			var tooltip_content = $(this).attr('title');
 			var position = $(this).position();
-        
+			
 			$(this).data('tooltip', tooltip_content).removeAttr('title');
 			
 			var styling =	'display: none; ' +
 					'position: absolute; ' +
 					'left: ' + position.left + 'px; ' +
 					'top: ' + (position.top + $(this).outerHeight(true)) + 'px;';
-		
+					
 			$('body').append('<div role="tooltip" style="' + styling + '">' + tooltip_content + '</div>');
 			$('div[role="tooltip"]').fadeIn(speed);
 			
 		}, function(){
-         
+				
 			$(this).attr('title', $(this).data('tooltip'));
 			$('div[role="tooltip"]').fadeOut(speed, function(){
 				$(this).remove();
