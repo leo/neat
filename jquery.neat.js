@@ -89,11 +89,8 @@
 				$(this).closest('ul').find('.active').removeClass('active');
 				$(this).closest('li').addClass('active');
 				
-				$(tabs).find('article.active').hide();
-				$(tabs).find('article.active').removeClass('active');
-				
-				$(tabs).find('#' + id).show();
-				$(tabs).find('#' + id).addClass('active');
+				tabs.find('article.active').hide().removeClass('active');
+				tabs.find('#' + id).show().addClass('active');
 			};
 			
 			event.preventDefault();
