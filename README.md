@@ -20,7 +20,7 @@ Afterwards our plugin needs to be loaded and initiated through some pretty neat 
 	
 ### minified
 
-As a developer you be an opponent of long loading times. In order to save as much space, you can download the minimized version of our plugin <a href="http://marijnhaverbeke.nl//uglifyjs?code_url=https://raw.githubusercontent.com/medienreaktor/neat/master/jquery.neat.js&header=/*!%20neat%20-%20a%20lightweight%20ui-handler%20for%20jquery%20-%20Copyright%202014%20medienreaktor%20GmbH%20*/">here</a>.
+As a developer you be an opponent of long loading times. In order to save as much space, you can download the minimized version of our plugin <a href="https://raw.githubusercontent.com/medienreaktor/neat/master/jquery.neat.min.js">here</a>.
 
 ### delays on mobile devices
 
