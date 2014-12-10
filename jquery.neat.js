@@ -1,6 +1,6 @@
 /*
-	neat 8 - a lightweight ui-handler for jquery
-	Copyright 2014 - medienreaktor GmbH
+	neat - a lightweight ui-handler for jquery
+	Copyright 2014 medienreaktor GmbH
 */
 
 (function ($) {
@@ -25,7 +25,7 @@
 		$(this).find('dd').css('display', 'none');
 		
 		$(this).find('dt').click(function(){
-                    
+
 			var open_items = $(this).next().hasClass('open');
 			var next = $(this).next();
 			var opened = $(this).closest('dl').find('.open');
