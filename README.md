@@ -1,16 +1,20 @@
-## what?
+# neat
 
-We all know jQuery UI but no one likes it. Why? It's completely overloaded and absolutely not dynamic. At this point, "neat" comes in.
+neat is a lightweight UI handler for jQuery.
 
-## how?
+## Why is it neat?
 
-Of course you need no include **jQuery** in your site, before you can use neat.
+jQuery UI is overloaded and bloated. neat is not.
+
+
+## How to use?
+
+First include jQuery, then neat in your site:
 
 	<script src="//code.jquery.com/jquery-latest.min.js"></script>
-	
-Afterwards our plugin needs to be loaded and initiated through some pretty neat methods. (You can find more information about each method in the [wiki](../../wiki).)
-
 	<script src="jquery.neat.min.js"></script>
+	
+Use the neat methods (you can find more about methods in the [wiki](../../wiki)):
 		
 	<script>
 		$(function(){
@@ -18,13 +22,13 @@ Afterwards our plugin needs to be loaded and initiated through some pretty neat 
 		});
 	</script>
 	
-### minified
+### Minified
 
-As a developer you be an opponent of long loading times. In order to save as much space, you can download the minimized version of our plugin <a href="https://rawgit.com/medienreaktor/neat/master/jquery.neat.min.js">here</a>.
+Reduce loading times and use the minified version of the plugin <a href="https://rawgit.com/medienreaktor/neat/master/jquery.neat.min.js">here</a>.
 
-### delays on mobile devices
+### Delays on Mobile Devices
 
-Many mobile browsers are adding a 300ms-delay to each click-event because they need to check if you use the double-tab method first. Of course, this is pretty ugly. To get around this you just need to implement [fastclick] (http://build.origami.ft.com/bundles/js?modules=fastclick):
+Many mobile browsers add a 300ms-delay to each click-event (to check for double-tapping). To get around this, you just need to implement [fastclick] (http://build.origami.ft.com/bundles/js?modules=fastclick):
 
 	$(function() {
     		FastClick.attach(document.body);
