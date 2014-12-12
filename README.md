@@ -2,7 +2,7 @@
 
 neat is a lightweight UI handler for jQuery.
 
-## Why is it neat?
+## Why (is it) neat?
 
 jQuery UI is overloaded and bloated. neat is not.
 
@@ -28,7 +28,7 @@ Use the neat methods (you can find more about methods in the [wiki](../../wiki))
 
 Create an accordion using a plain definition list:
 
-	<dl class="list">
+	<dl class="accordion">
 		<dt>This is the title of the first pane</dt>
 		<dd>This is a description.</dd>
 		<dt>This is the title of the second pane</dt>
@@ -37,8 +37,8 @@ Create an accordion using a plain definition list:
 	
 Load and customize it:
 
-	$('.list').accordion({
-		'speed': 200  // Defines the toggling speed of each item
+	$('.accordion').accordion({
+		'speed': 200  // Defines the toggle speed of each item
 	});
 
 #### .tabs()
