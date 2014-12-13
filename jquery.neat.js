@@ -98,37 +98,6 @@
 		
 	}
 	
-	$.fn.center = function(options) {
-			
-		element = $(this);
-			
-		var config = {
-			'container': null
-		};
-			
-		if (options) {
-			$.extend(config, options);
-		};
-			
-		if (config.container !== null) {
-			var wrap = config.container;
-			container.css('position', 'relative');
-		} else {
-			var wrap = $(window);
-		};
-			
-		$(window).resize(function() {
-			element.css({
-				position: 'absolute',
-				left: (wrap.width() / 2) - element.outerWidth(true) / 2,
-				top: (wrap.height() / 2) - element.outerHeight(true) / 2
-			});
-		}).trigger('resize');
-		
-		return this;
-		
-	}
-	
 	$.fn.tooltip = function(speed) {
 		
 		if(! speed) {
