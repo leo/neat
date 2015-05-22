@@ -1,6 +1,6 @@
 /*
 	neat 8.3 - a lightweight ui-handler for jquery
-	Copyright 2014 medienreaktor GmbH
+	Copyright 2015 medienreaktor GmbH
 */
 
 (function ($) {
