@@ -10,16 +10,16 @@ jQuery UI is overloaded and bloated. neat is not.
 
 First include jQuery, then neat in your site:
 
-	<script src="//code.jquery.com/jquery-latest.min.js"></script>
-	<script src="jquery.neat.min.js"></script>
+  <script src="//code.jquery.com/jquery-latest.min.js"></script>
+  <script src="jquery.neat.min.js"></script>
 
 Use the neat methods (you can find more about methods in the [wiki](../../wiki)):
 
-	<script>
-		$(function(){
-			$('.element').method();
-		});
-	</script>
+  <script>
+    $(function(){
+      $('.element').method();
+    });
+  </script>
 
 ### Methods
 
@@ -27,43 +27,43 @@ Use the neat methods (you can find more about methods in the [wiki](../../wiki))
 
 Create an accordion using a plain definition list:
 
-	<dl class="accordion">
-		<dt>This is the title of the first pane</dt>
-		<dd>This is a description.</dd>
-		<dt>This is the title of the second pane</dt>
-		<dd>This is a description.</dd>
-	</dl>
+  <dl class="accordion">
+    <dt>This is the title of the first pane</dt>
+    <dd>This is a description.</dd>
+    <dt>This is the title of the second pane</dt>
+    <dd>This is a description.</dd>
+  </dl>
 
 Load and customize it:
 
-	$('.accordion').accordion({
-		'speed': 200  // Defines the toggle speed of each item
-	});
+  $('.accordion').accordion({
+    'speed': 200  // Defines the toggle speed of each item
+  });
 
 #### .tabs()
 
 Create a tabbed navigation using a list and articles:
 
-	<div class="tabs">
-		<nav>
-			<ul>
-				<li><a href="#tab-1">Navigation zu Tab 1</a></li>
-				<li><a href="#tab-2">Navigation zu Tab 2</a></li>
-			</ul>
-		</nav>
-		<section>
-			<article id="tab-1">
-				Inhalt des ersten Tabs.
-			</article>
-			<article id="tab-2">
-				Inhalt des zweiten Tabs.
-			</article>
-		</section>
-	</div>
+  <div class="tabs">
+    <nav>
+      <ul>
+        <li><a href="#tab-1">Navigation zu Tab 1</a></li>
+        <li><a href="#tab-2">Navigation zu Tab 2</a></li>
+      </ul>
+    </nav>
+    <section>
+      <article id="tab-1">
+        Inhalt des ersten Tabs.
+      </article>
+      <article id="tab-2">
+        Inhalt des zweiten Tabs.
+      </article>
+    </section>
+  </div>
 
 Load it:
 
-	$('.tabs').tabs();
+  $('.tabs').tabs();
 
 
 #### .tooltip()
@@ -86,6 +86,6 @@ Reduce loading times and use the minified version of the plugin <a href="https:/
 
 Many mobile browsers add a 300ms-delay to each click-event (to check for double-tapping). To get around this, you just need to implement [fastclick] (http://build.origami.ft.com/bundles/js?modules=fastclick):
 
-	$(function() {
-    		FastClick.attach(document.body);
-	});
+  $(function() {
+        FastClick.attach(document.body);
+  });
