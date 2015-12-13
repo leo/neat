@@ -6,16 +6,15 @@ neat is a lightweight UI handler for jQuery.
 
 jQuery UI is overloaded and bloated. neat is not.
 
-
 ## How to use?
 
 First include jQuery, then neat in your site:
 
 	<script src="//code.jquery.com/jquery-latest.min.js"></script>
 	<script src="jquery.neat.min.js"></script>
-	
+
 Use the neat methods (you can find more about methods in the [wiki](../../wiki)):
-		
+
 	<script>
 		$(function(){
 			$('.element').method();
@@ -34,7 +33,7 @@ Create an accordion using a plain definition list:
 		<dt>This is the title of the second pane</dt>
 		<dd>This is a description.</dd>
 	</dl>
-	
+
 Load and customize it:
 
 	$('.accordion').accordion({
@@ -65,19 +64,19 @@ Create a tabbed navigation using a list and articles:
 Load it:
 
 	$('.tabs').tabs();
-	
+
 
 #### .tooltip()
 
 TODO: Describe what it does and how to use ...
 
-	
+
 #### .center()
 
 TODO: Describe what it does and how to use ...
 
 
-## Further information	
+## Further information
 
 ### Minified version
 

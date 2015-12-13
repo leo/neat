@@ -1,11 +1,11 @@
 .accordion dd {
-	display: none;
+  display: none;
 }
 
 .tabs section article {
-	display: none;
+  display: none;
 }
 
 .tabs section article.active {
-	display: block;
+  display: block;
 }
